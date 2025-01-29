@@ -30,42 +30,21 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<classifier>mule-application</classifier>
-					<cloudhub2Deployment>
-						<uri>https://anypoint.mulesoft.com</uri>
-						<provider>MC</provider>
-						<environment>Sandbox</environment>
-						<target>Cloudhub-US-East-2</target>
-						<muleVersion>4.4.0</muleVersion>
-						<server>anypoint-exchange-v3</server>
-						<applicationName>dev-${project.name}</applicationName>
-						<replicas>1</replicas>
-						<vCores>0.1</vCores>
-						<properties>
-							<anypoint.platform.base_uri>https://anypoint.mulesoft.com/</anypoint.platform.base_uri>
-							<anypoint.platform.analytics_base_uri>https://analytics-ingest.anypoint.mulesoft.com/</anypoint.platform.analytics_base_uri>
-							<anypoint.platform.config.analytics.agent.enabled>true</anypoint.platform.config.analytics.agent.enabled>
-						</properties>
-						<deploymentSettings>
-							<lastMileSecurity>false</lastMileSecurity>
-							<forwardSslSession>false</forwardSslSession>
-						</deploymentSettings>
-					</cloudhub2Deployment>
-					<sharedLibraries>
-						<sharedLibrary>
-							<groupId>org.apache.activemq</groupId>
-							<artifactId>activemq-client</artifactId>
-						</sharedLibrary>
-						<sharedLibrary>
-							<groupId>org.apache.activemq</groupId>
-							<artifactId>activemq-broker</artifactId>
-						</sharedLibrary>
-						<sharedLibrary>
-							<groupId>org.apache.activemq</groupId>
-							<artifactId>activemq-kahadb-store</artifactId>
-						</sharedLibrary>
-					</sharedLibraries>
-				</configuration>
+				    <cloudHubDeployment>
+				      <uri>https://anypoint.mulesoft.com</uri>
+				      <muleVersion>4.8.1</muleVersion>
+				      <username>${username}</username>
+				      <password>${password}</password>
+				      <applicationName>${project.name}</applicationName>
+				      <environment>Sandbox</environment>
+				      <region>us-east-1</region>
+				      <workers>1</workers>
+				      <workerType>MICRO</workerType>
+				      <properties>
+				        <key>value</key>
+				      </properties>
+				    </cloudHubDeployment>
+				  </configuration>
 			</plugin>
 		</plugins>
 	</build>

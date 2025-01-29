@@ -8,7 +8,14 @@
 	<packaging>mule-application</packaging>
 
 	<name>cicd-test-api</name>
-
+	<distributionManagement>
+		<repository>
+			<id>anypoint-exchange-v3</id>
+			<name>Anypoint Exchange</name>
+			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/5ceadb94-ca74-4f39-bb6e-4d0c41b5d873/maven</url>
+			<layout>default</layout>
+		</repository>
+	</distributionManagement>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -30,20 +37,27 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-				    <cloudHubDeployment>
+				    <cloudhub2Deployment>
 				      <uri>https://anypoint.mulesoft.com</uri>
-				      <muleVersion>4.8.1</muleVersion>
-				      <username>${username}</username>
-				      <password>${password}</password>
-				      <applicationName>${project.name}</applicationName>
-				      <environment>Sandbox</environment>
-				      <region>us-east-1</region>
-				      <workers>1</workers>
-				      <workerType>MICRO</workerType>
-				      <properties>
-				        <key>value</key>
-				      </properties>
-				    </cloudHubDeployment>
+				      <provider>MC</provider>
+				      <environment>sandbox</environment>
+				      <target>Cloudhub-US-East-1</target>
+				      <muleVersion>${muleVersion}</muleVersion>
+				      <username>${user}</username>
+				      <password>${pass}</password>
+				      <applicationName>cicd-test-api</applicationName>
+				      <replicas>1</replicas>
+				      <vCores>1</vCores>
+				      <deploymentSettings>
+				        <http>
+				          <inbound>
+				            <publicUrl>${publicURL}</publicUrl>
+				            <forwardSslSession>true</forwardSslSession>
+				            <lastMileSecurity>true</lastMileSecurity>
+				          </inbound>
+				        </http>
+				      </deploymentSettings>
+				    </cloudhub2Deployment>
 				  </configuration>
 			</plugin>
 		</plugins>

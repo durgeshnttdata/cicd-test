@@ -11,7 +11,7 @@
 	<distributionManagement>
 		<repository>
 			<id>anypoint-exchange-v3</id>
-			<name>Corporate Repository</name>
+			<name>Anypoint Exchange</name>
 			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/5ceadb94-ca74-4f39-bb6e-4d0c41b5d873/maven</url>
 			<layout>default</layout>
 		</repository>
@@ -20,8 +20,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<app.runtime>4.8.1</app.runtime>
-		<mule.maven.plugin.version>4.3.0</mule.maven.plugin.version>
+		<app.runtime>4.4.0-20240122</app.runtime>
+		<mule.maven.plugin.version>4.4.0</mule.maven.plugin.version>
 	</properties>
 
 	<build>
@@ -43,6 +43,7 @@
 				            <provider>MC</provider>
 				            <environment>Sandbox</environment>
 				            <target>Cloudhub-US-East-2</target>
+					    <muleVersion>4.4.0</muleVersion>
 				            <server>anypoint-exchange-v3</server>
 				            <applicationName>dev-${project.name}</applicationName>
 				            <releaseChannel>EDGE</releaseChannel>

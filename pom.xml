@@ -10,7 +10,7 @@
 	<name>cicd-test-api</name>
 	<distributionManagement>
 		<repository>
-			<id>Repository</id>
+			<id>anypoint-exchange-v3</id>
 			<name>Corporate Repository</name>
 			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/5ceadb94-ca74-4f39-bb6e-4d0c41b5d873/maven</url>
 			<layout>default</layout>
@@ -43,8 +43,8 @@
 				            <provider>MC</provider>
 				            <environment>Sandbox</environment>
 				            <target>Cloudhub-US-East-2</target>
-				            <server>Repository</server>
-				            <applicationName>${project.artifactId}</applicationName>
+				            <server>anypoint-exchange-v3</server>
+				            <applicationName>dev-${project.name}</applicationName>
 				            <releaseChannel>EDGE</releaseChannel>
 				            <replicas>1</replicas>
 				            <vCores>0.1</vCores>
@@ -79,9 +79,9 @@
 			<layout>default</layout>
 		</repository>
 		<repository>
-			<id>Repository</id>
-			<name>Private Exchange repository</name>
-			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
+			<id>mulesoft-releases</id>
+			<name>MuleSoft Releases Repository</name>
+			<url>https://repository.mulesoft.org/releases/</url>
 			<layout>default</layout>
 		</repository>
 	</repositories>

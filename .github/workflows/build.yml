@@ -1,5 +1,4 @@
 name: Build Publish and Deploy to Sandbox
-
 on:
   push:
     branches: [ main ]

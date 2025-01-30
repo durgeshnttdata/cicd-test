@@ -9,11 +9,11 @@
 	<name>cicd-test-api</name>
 	<distributionManagement>
 		<repository>
-            <id>Repository</id>
-            <name>Corporate Repository</name>
-            <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
-            <layout>default</layout>
-        </repository>
+	            <id>anypoint-credentials</id>
+	            <name>Corporate Repository</name>
+	            <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
+	            <layout>default</layout>
+        	</repository>
 	</distributionManagement>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -36,15 +36,13 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-				        <classifier>mule-application</classifier>
 				        <cloudhub2Deployment>
 				            <uri>https://anypoint.mulesoft.com</uri>
 				            <provider>MC</provider>
 				            <environment>Sandbox</environment>
 				            <target>Cloudhub-US-East-2</target>
-				            <server>Repository</server>
+				            <server>anypoint-credentials</server>
 				            <applicationName>dev-${project.name}</applicationName>
-				            <releaseChannel>EDGE</releaseChannel>
 				            <replicas>1</replicas>
 				            <vCores>0.1</vCores>
 				            <deploymentSettings>

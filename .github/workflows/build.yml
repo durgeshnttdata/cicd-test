@@ -36,7 +36,7 @@ jobs:
         artifactName2=$(ls target/*.jar | head -1 | sed "s/.jar/-$commitHash.jar/g")
         mv $artifactName1 $artifactName2
     - name: Publish to Exchange
-      run: mvn  -s  settings.xml clean deploy -DconnectedAppClientId="3fc7da95442e46118df96e22b789ce58" -DconnectedAppClientSecret="f6C73C2e9da8424eBD9Cbe5AeAA96dE1" -DENV="Sandbox" -DTarget="Cloudhub-US-East-2" 
+      run: mvn  -s  settings.xml clean deploy -DconnectedAppClientId=${{ secrets.CONNECTED_APP_CLIENT_ID }} -DconnectedAppClientSecret=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} 
     - name: Upload artifact 
       uses: actions/upload-artifact@v4
       with:
@@ -67,7 +67,7 @@ jobs:
         mvn -s settings.xml deploy -DmuleDeploy \
          -Dmule.artifact=$artifactName \
          -DENV=${{vars.ENV}} \
-         -DTarget="Cloudhub-US-East-2" \
+         -DTarget=${{vars.TARGET}} \
          -DconnectedAppClientId=${{ secrets.CONNECTED_APP_CLIENT_ID }} \
          -DconnectedAppClientSecret=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} \
         # -Danypoint.platform.client_id=${{ secrets.ANYPOINT_CLIENT_ID}} \

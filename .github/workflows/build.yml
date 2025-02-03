@@ -42,7 +42,7 @@ jobs:
           name: artifacts
           path: target/*.jar
           
-   Publish To Exchange:
+  publish to exchange:
     need: build
     runs-on: ubuntu-latest
     steps:    
@@ -52,7 +52,7 @@ jobs:
       run: mvn  -s  settings.xml clean deploy -DconnectedAppClientId="3fc7da95442e46118df96e22b789ce58" -DconnectedAppClientSecret="f6C73C2e9da8424eBD9Cbe5AeAA96dE1" -DENV="Sandbox" -DTarget="Cloudhub-US-East-2" 
       
   deploy:
-    needs: build
+    needs: publish to exchange
     runs-on: ubuntu-latest
     steps:    
     - name: Checkout this repo

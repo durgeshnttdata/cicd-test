@@ -38,7 +38,7 @@ jobs:
         artifactName2=$(ls target/*.jar | head -1 | sed "s/.jar/-$commitHash.jar/g")
         mv $artifactName1 $artifactName2
     - name: Publish to Exchange
-      run: mvn clean deploy -DCLIENT_ID="3fc7da95442e46118df96e22b789ce58" -DCLIENT_SECRET="f6C73C2e9da8424eBD9Cbe5AeAA96dE1"
+      run: mvn clean deploy -X -DCLIENT_ID="3fc7da95442e46118df96e22b789ce58" -DCLIENT_SECRET="f6C73C2e9da8424eBD9Cbe5AeAA96dE1"
     - name: Upload artifact 
       uses: actions/upload-artifact@v4
       with:

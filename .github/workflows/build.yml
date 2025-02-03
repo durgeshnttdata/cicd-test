@@ -24,6 +24,11 @@ jobs:
       with:
         distribution: 'zulu'
         java-version: 8
+    - name: Update pom version
+      run: |
+          mvn versions:set -DnewVersion=${{inputs.appVersion}} -DgenerateBackupPoms=false
+          mvn versions:commit
+
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Stamp artifact file name with commit hash

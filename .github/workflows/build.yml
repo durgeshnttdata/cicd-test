@@ -35,8 +35,6 @@ jobs:
         commitHash=$(git rev-parse --short "$GITHUB_SHA")
         artifactName2=$(ls target/*.jar | head -1 | sed "s/.jar/-$commitHash.jar/g")
         mv $artifactName1 $artifactName2
-    - name: Publish to Exchange
-      run: mvn clean deploy -X
     - name: Upload artifact 
       uses: actions/upload-artifact@v4
       with:
@@ -65,10 +63,10 @@ jobs:
         artifactName=$(ls *.jar | head -1)
         mvn deploy -DmuleDeploy \
          -Dmule.artifact=$artifactName \
-         -Denv=${{vars.ENV}} \
-         -Dcloudhub.target=${{vars.TARGET}} \
-         -DCLIENT_ID=${{ secrets.CONNECTED_APP_CLIENT_ID }} \
-         -DCLIENT_SECRET=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} \
-         -Danypoint.platform.client_id=${{ secrets.ANYPOINT_CLIENT_ID}} \
-         -Danypoint.platform.client_secret=${{ secrets.ANYPOINT_CLIENT_SECRET }} 
+       #  -Denv=${{vars.ENV}} \
+       #  -Dcloudhub.target=${{vars.TARGET}} \
+        # -DCLIENT_ID=${{ secrets.CONNECTED_APP_CLIENT_ID }} \
+        # -DCLIENT_SECRET=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} \
+        # -Danypoint.platform.client_id=${{ secrets.ANYPOINT_CLIENT_ID}} \
+        # -Danypoint.platform.client_secret=${{ secrets.ANYPOINT_CLIENT_SECRET }} 
       #  -Ddecryption.key="$DECRYPTION_KEY"

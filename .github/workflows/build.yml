@@ -35,6 +35,8 @@ jobs:
         commitHash=$(git rev-parse --short "$GITHUB_SHA")
         artifactName2=$(ls target/*.jar | head -1 | sed "s/.jar/-$commitHash.jar/g")
         mv $artifactName1 $artifactName2
+    - name: Publish to Exchange
+      run: mvn  -s  settings.xml clean deploy -DconnectedAppClientId="3fc7da95442e46118df96e22b789ce58" -DconnectedAppClientSecret="f6C73C2e9da8424eBD9Cbe5AeAA96dE1" -DENV="Sandbox" -DTarget="Cloudhub-US-East-2" 
     - name: Upload artifact 
       uses: actions/upload-artifact@v4
       with:
@@ -58,18 +60,16 @@ jobs:
     - uses: actions/download-artifact@v4
       with:
         name: artifacts
-    - name: Publish to Exchange
-      run: mvn  -s  settings.xml clean deploy -DmuleDeploy -DconnectedAppClientId="3fc7da95442e46118df96e22b789ce58" -DconnectedAppClientSecret="f6C73C2e9da8424eBD9Cbe5AeAA96dE1" -DENV="Sandbox" -DTarget="Cloudhub-US-East-2" 
       
     - name: Deploy to Sandbox
       run: |
         artifactName=$(ls *.jar | head -1)
-        mvn deploy -DmuleDeploy -X \
+        mvn -s settings.xml deploy -DmuleDeploy \
          -Dmule.artifact=$artifactName \
-       #  -Denv=${{vars.ENV}} \
-       #  -Dcloudhub.target=${{vars.TARGET}} \
-        # -DCLIENT_ID=${{ secrets.CONNECTED_APP_CLIENT_ID }} \
-        # -DCLIENT_SECRET=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} \
+         -DENV=${{vars.ENV}} \
+         -DTarget="Cloudhub-US-East-2" \
+         -DconnectedAppClientId=${{ secrets.CONNECTED_APP_CLIENT_ID }} \
+         -DconnectedAppClientSecret=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} \
         # -Danypoint.platform.client_id=${{ secrets.ANYPOINT_CLIENT_ID}} \
         # -Danypoint.platform.client_secret=${{ secrets.ANYPOINT_CLIENT_SECRET }} 
       #  -Ddecryption.key="$DECRYPTION_KEY"

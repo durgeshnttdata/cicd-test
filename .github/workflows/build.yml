@@ -43,7 +43,7 @@ jobs:
           path: target/*.jar
           
   publish to exchange:
-    need: build
+    needs: build
     runs-on: ubuntu-latest
     steps:    
     - name: Checkout this repo

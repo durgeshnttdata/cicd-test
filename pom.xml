@@ -9,18 +9,18 @@
 	<name>cicd-test-api</name>
 	<distributionManagement>
 		<repository>
-	            <id>Repository</id>
+	            <id>anypoint-exchange-v3</id>
 	            <name>Corporate Repository</name>
 	            <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
 	            <layout>default</layout>
-        	</repository>
+        </repository>
 	</distributionManagement>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<app.runtime>4.8.1</app.runtime>
-		<mule.maven.plugin.version>4.3.0</mule.maven.plugin.version>
+		<app.runtime>4.8.0</app.runtime>
+		<mule.maven.plugin.version>4.1.0</mule.maven.plugin.version>
 	</properties>
 
 	<build>
@@ -39,10 +39,15 @@
 				        <cloudhub2Deployment>
 				            <uri>https://anypoint.mulesoft.com</uri>
 				            <provider>MC</provider>
+							<businessGroupId>${project.groupId}</businessGroupId>
 				            <environment>Sandbox</environment>
 				            <target>Cloudhub-US-East-2</target>
-				            <server>anypoint-credentials</server>
+				            <server>anypoint-exchange-v3</server>
 				            <applicationName>dev-${project.name}</applicationName>
+							<muleVersion>4.8.0</muleVersion>
+							<connectedAppClientId>3fc7da95442e46118df96e22b789ce58</connectedAppClientId>
+							<connectedAppClientSecret>f6C73C2e9da8424eBD9Cbe5AeAA96dE1</connectedAppClientSecret>
+							<connectedAppGrantType>client_credentials</connectedAppGrantType>
 				            <replicas>1</replicas>
 				            <vCores>0.1</vCores>
 				            <deploymentSettings>
@@ -81,12 +86,6 @@
 			<url>https://repository.mulesoft.org/releases/</url>
 			<layout>default</layout>
 		</repository>
-		<repository>
-	            	<id>Repository</id>
-	            	<name>Private Exchange repository</name>
-	            	<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
-	            	<layout>default</layout>
-	        </repository>
 	</repositories>
 
 	<pluginRepositories>

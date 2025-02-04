@@ -10,6 +10,11 @@ jobs:
     steps:
     - name: Checkout this repo
       uses: actions/checkout@v4
+    - name : Checkout template repo
+      uses: actions/checkout@v4
+      with:
+        repository: 'durgeshnttdata/workflow-template'
+        path: 'settings'
     - name: Cache dependencies
       uses: actions/cache@v4
       with:
@@ -36,7 +41,7 @@ jobs:
         artifactName2=$(ls target/*.jar | head -1 | sed "s/.jar/-$commitHash.jar/g")
         mv $artifactName1 $artifactName2
     - name: Publish to Exchange
-      run: mvn  -s  settings.xml clean deploy -DconnectedAppClientId=${{ secrets.CONNECTED_APP_CLIENT_ID }} -DconnectedAppClientSecret=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} 
+      run: mvn  -s  settings/settings-non-prod.xml clean deploy -DconnectedAppClientId=${{ secrets.CONNECTED_APP_CLIENT_ID }} -DconnectedAppClientSecret=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} 
     - name: Upload artifact 
       uses: actions/upload-artifact@v4
       with:
@@ -64,7 +69,7 @@ jobs:
     - name: Deploy to Sandbox
       run: |
         artifactName=$(ls *.jar | head -1)
-        mvn -s settings.xml deploy -DmuleDeploy \
+        mvn -s settings/settings-non-prod.xml deploy -DmuleDeploy \
          -Dmule.artifact=$artifactName \
          -DENV=${{vars.ENV}} \
          -DTarget=${{vars.TARGET}} \

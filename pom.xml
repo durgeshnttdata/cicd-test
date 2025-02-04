@@ -43,8 +43,8 @@
 				            <server>anypoint-credentials</server>
 				            <applicationName>${application.name}</applicationName>
 					    <muleVersion>${app.runtime}</muleVersion>
-					    <connectedAppClientId>${connectedAppClientId}</connectedAppClientId>
-					    <connectedAppClientSecret>${connectedAppClientSecret}</connectedAppClientSecret>
+					    <connectedAppClientId>e6f146c880b948699aa17cd46a00eb0f</connectedAppClientId>
+					    <connectedAppClientSecret>6B824c679f2E4262B58465c4ebf121db</connectedAppClientSecret>
 					    <connectedAppGrantType>client_credentials</connectedAppGrantType>
 				            <replicas>1</replicas>
 				            <vCores>0.1</vCores>

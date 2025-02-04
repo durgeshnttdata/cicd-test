@@ -41,7 +41,7 @@
 				            <environment>dev</environment>
 				            <target>Cloudhub-US-East-2</target>
 				            <server>anypoint-credentials</server>
-				            <applicationName>dev-{$project.name}</applicationName>
+				            <applicationName>dev-${project.name}</applicationName>
 					    <muleVersion>${app.runtime}</muleVersion>
 					    <connectedAppClientId>e6f146c880b948699aa17cd46a00eb0f</connectedAppClientId>
 					    <connectedAppClientSecret>6B824c679f2E4262B58465c4ebf121db</connectedAppClientSecret>

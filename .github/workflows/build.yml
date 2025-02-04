@@ -1,10 +1,10 @@
-on:
+on: 
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  # pull_request:
+  # branches: [ main ]
 jobs: 
-    cicd:
+    build:
         uses: durgeshnttdata/workflow-template/.github/workflows/workflow.yml@main
         with:
             appName: cicd-test

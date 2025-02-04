@@ -64,12 +64,4 @@ jobs:
     - name: Deploy to Sandbox
       run: |
         artifactName=$(ls *.jar | head -1)
-        mvn -s settings.xml deploy -DmuleDeploy \
-         -Dmule.artifact=$artifactName \
-         -Denv=${{vars.ENV}} \
-         -Dtarget=${{vars.TARGET}} \
-         -DconnectedAppClientId=${{ secrets.CONNECTED_APP_CLIENT_ID }} \
-         -DconnectedAppClientSecret=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} \
-        # -Danypoint.platform.client_id=${{ secrets.ANYPOINT_CLIENT_ID}} \
-        # -Danypoint.platform.client_secret=${{ secrets.ANYPOINT_CLIENT_SECRET }} 
-      #  -Ddecryption.key="$DECRYPTION_KEY"
+        mvn -s settings.xml deploy -DmuleDeploy -Dmule.artifact=$artifactName -Denv=${{vars.ENV}} -Dtarget=${{vars.TARGET}} -DconnectedAppClientId=${{ secrets.CONNECTED_APP_CLIENT_ID }} -DconnectedAppClientSecret=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} 

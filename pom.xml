@@ -38,10 +38,10 @@
 				            <uri>https://anypoint.mulesoft.com</uri>
 				            <provider>MC</provider>
 					    <businessGroupId>${project.groupId}</businessGroupId>
-				            <environment>${env}</environment>
-				            <target>${target}</target>
+				            <environment>dev</environment>
+				            <target>Cloudhub-US-East-2</target>
 				            <server>anypoint-credentials</server>
-				            <applicationName>${application.name}</applicationName>
+				            <applicationName>dev-{$project.name}</applicationName>
 					    <muleVersion>${app.runtime}</muleVersion>
 					    <connectedAppClientId>e6f146c880b948699aa17cd46a00eb0f</connectedAppClientId>
 					    <connectedAppClientSecret>6B824c679f2E4262B58465c4ebf121db</connectedAppClientSecret>

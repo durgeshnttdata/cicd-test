@@ -1,11 +1,13 @@
 on: 
   push:
     branches: [ main ]
-  # pull_request:
-  # branches: [ main ]
+  pull_request:
+    branches: [ main ]
 jobs: 
-    build:
-        uses: durgeshnttdata/workflow-template/.github/workflows/workflow.yml@main
-        with:
-            appName: cicd-test
-            appVersion: 1.0.${{ github.run_number }}
+  build:
+    uses: durgeshnttdata/workflow-template/.github/workflows/workflow.yml@main
+    with:
+      appName: cicd-test
+      appVersion: 1.0.${{ github.run_number }}
+      
+    secrets: inherit 

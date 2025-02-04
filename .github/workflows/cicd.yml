@@ -61,7 +61,6 @@ jobs:
       with:
         name: artifacts
       
-    - name: Deploy to Sandbox
+    - name: Deploy to runtime
       run: |
-        artifactName=$(ls *.jar | head -1)
-        mvn deploy --settings .maven/settings.xml -DmuleDeploy -Dmule.artifact=$artifactName -Denv=${{vars.ENV}} -Dtarget=${{vars.TARGET}} -DconnectedAppClientId=${{ secrets.CONNECTED_APP_CLIENT_ID }} -DconnectedAppClientSecret=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} 
+        mvn deploy --settings .maven/settings.xml -DmuleDeploy -Denv=${{vars.ENV}} -Dtarget=${{vars.TARGET}} -DconnectedAppClientId="${{ secrets.CONNECTED_APP_CLIENT_ID }}" -DconnectedAppClientSecret="${{ secrets.CONNECTED_APP_CLIENT_SECRET }}" 

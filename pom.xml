@@ -39,8 +39,8 @@
 				            <uri>https://anypoint.mulesoft.com</uri>
 				            <provider>MC</provider>
 							<businessGroupId>${project.groupId}</businessGroupId>
-				            <environment>${ENV}</environment>
-				            <target>${Target}</target>
+				            <environment>${env}</environment>
+				            <target>${target}</target>
 				            <server>anypoint-credentials</server>
 				            <applicationName>dev-${project.name}</applicationName>
 							<muleVersion>${app.runtime}</muleVersion>

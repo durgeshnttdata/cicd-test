@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [ main ]
 jobs: 
-  build:
+  cicd:
     uses: durgeshnttdata/workflow-template/.github/workflows/workflow.yml@main
     with:
       appName: cicd-test

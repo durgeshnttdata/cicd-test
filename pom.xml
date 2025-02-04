@@ -41,7 +41,7 @@
 				            <environment>${env}</environment>
 				            <target>${target}</target>
 				            <server>anypoint-credentials</server>
-				            <applicationName>dev-${project.name}</applicationName>
+				            <applicationName>dev-${application.name}</applicationName>
 							<muleVersion>${app.runtime}</muleVersion>
 							<connectedAppClientId>${connectedAppClientId}</connectedAppClientId>
 							<connectedAppClientSecret>${connectedAppClientSecret}</connectedAppClientSecret>

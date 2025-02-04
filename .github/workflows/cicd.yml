@@ -36,7 +36,7 @@ jobs:
         artifactName2=$(ls target/*.jar | head -1 | sed "s/.jar/-$commitHash.jar/g")
         mv $artifactName1 $artifactName2
     - name: Publish to Exchange
-      run: mvn  -s  settings.xml clean deploy -DconnectedAppClientId=${{ secrets.CONNECTED_APP_CLIENT_ID }} -DconnectedAppClientSecret=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} 
+      run: mvn clean deploy --settings .maven/settings.xml -DconnectedAppClientId=${{ secrets.CONNECTED_APP_CLIENT_ID }} -DconnectedAppClientSecret=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} 
     - name: Upload artifact 
       uses: actions/upload-artifact@v4
       with:
@@ -64,4 +64,4 @@ jobs:
     - name: Deploy to Sandbox
       run: |
         artifactName=$(ls *.jar | head -1)
-        mvn -s settings.xml deploy -DmuleDeploy -Dmule.artifact=$artifactName -Denv=${{vars.ENV}} -Dtarget=${{vars.TARGET}} -DconnectedAppClientId=${{ secrets.CONNECTED_APP_CLIENT_ID }} -DconnectedAppClientSecret=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} 
+        mvn deploy --settings .maven/settings.xml -DmuleDeploy -Dmule.artifact=$artifactName -Denv=${{vars.ENV}} -Dtarget=${{vars.TARGET}} -DconnectedAppClientId=${{ secrets.CONNECTED_APP_CLIENT_ID }} -DconnectedAppClientSecret=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} 

@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>5ceadb94-ca74-4f39-bb6e-4d0c41b5d873</groupId>
-	<artifactId>cicd-test</artifactId>
+	<artifactId>cicd-test-api</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
-	<name>cicd-test</name>
+	<name>cicd-test-api</name>
 	<distributionManagement>
 		<repository>
 	            <id>Repository</id>

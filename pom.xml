@@ -37,8 +37,8 @@
 				        <cloudhub2Deployment>
 				            <uri>https://anypoint.mulesoft.com</uri>
 				            <provider>MC</provider>
-				            <environment>dev</environment>
-				            <target>Cloudhub-US-East-2</target>
+				            <environment>${env}</environment>
+				            <target>${target}</target>
 				            <server>Repository</server>
 				            <applicationName>${project.artifactId}</applicationName>
 				            <replicas>1</replicas>

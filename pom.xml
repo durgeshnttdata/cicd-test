@@ -20,7 +20,6 @@
 		<app.runtime>4.8.0</app.runtime>
 		<mule.maven.plugin.version>4.1.1</mule.maven.plugin.version>
 	</properties>
-
 	<build>
 		<plugins>
 			<plugin>

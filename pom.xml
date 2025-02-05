@@ -40,7 +40,7 @@
 				            <environment>${env}</environment>
 				            <target>${target}</target>
 				            <server>Repository</server>
-				            <applicationName>${project.artifactId}-dev</applicationName>
+				            <applicationName>${project.artifactId}</applicationName>
 				            <replicas>1</replicas>
 				            <vCores>0.1</vCores>
 				            <deploymentSettings>

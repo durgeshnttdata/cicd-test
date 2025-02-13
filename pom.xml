@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>60eac9b3-9567-4246-858e-a4de1ce55fd4</groupId>
 	<artifactId>cicd-test-api</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<packaging>mule-application</packaging>
 	<name>cicd-test-api</name>
 	<distributionManagement>

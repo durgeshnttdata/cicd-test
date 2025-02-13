@@ -41,6 +41,7 @@
 				            <target>${target}</target>
 				            <server>Repository</server>
 				            <applicationName>${application.name}</applicationName>
+					    <releaseChannel>LTS</releaseChannel>	
 				            <replicas>1</replicas>
 				            <vCores>0.1</vCores>
 				            <deploymentSettings>

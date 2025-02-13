@@ -41,6 +41,7 @@
 				            <target>${target}</target>
 				            <server>Repository</server>
 				            <applicationName>${application.name}</applicationName>
+					    <muleVersion>4.4.0</muleVersion>
 				            <replicas>1</replicas>
 				            <vCores>0.1</vCores>
 				            <deploymentSettings>

@@ -39,7 +39,7 @@
 				            <uri>https://anypoint.mulesoft.com</uri>
 				            <provider>MC</provider>
 				            <environment>${cloudhub.environment}</environment>
-				            <target>${cloudhub.target}</target>
+				            <target>Cloudhub-US-East-2</target>
 				            <server>Repository</server>
 				            <applicationName>${application.name}</applicationName>
 				            <replicas>1</replicas>

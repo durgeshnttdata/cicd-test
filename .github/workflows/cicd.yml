@@ -9,3 +9,5 @@ jobs:
         with:
             appName: cicd-test
             appVersion: 1.0.${{ github.run_number }}
+            
+        secrets: inherit 

@@ -18,7 +18,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<mule.maven.plugin.version>4.4.0</mule.maven.plugin.version>
-		<app.runtime>4.9.0:7</app.runtime>
 	</properties>
 	<build>
 		<plugins>
@@ -40,6 +39,7 @@
 				            <environment>${cloudhub.environment}</environment>
 				            <target>${cloudhub.target}</target>	
 				            <server>Repository</server>
+					    <releaseChannel>LTS</releaseChannel>
 				            <applicationName>${application.name}</applicationName>
 				            <replicas>1</replicas>
 				            <vCores>0.1</vCores>

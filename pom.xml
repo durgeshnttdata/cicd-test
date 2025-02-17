@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>272c406d-e2c1-4b02-87f9-38e686f1e9e1</groupId>
 	<artifactId>cicd-test-api</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<packaging>mule-application</packaging>
 	<name>cicd-test</name>
 	<distributionManagement>
@@ -18,7 +18,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<mule.maven.plugin.version>4.3.0</mule.maven.plugin.version>
+		<mule.maven.plugin.version>4.4.0</mule.maven.plugin.version>
+		<app.runtime>4.9.0:7</app.runtime>
 	</properties>
 	<build>
 		<plugins>
@@ -38,8 +39,7 @@
 				            <uri>https://anypoint.mulesoft.com</uri>
 				            <provider>MC</provider>
 				            <environment>dev</environment>
-				            <target>Cloudhub-US-East-2</target>
-					    <releaseChannel>LTS</releaseChannel>	
+				            <target>Cloudhub-US-East-2</target>	
 				            <server>Repository</server>
 				            <applicationName>cicd-test-dev</applicationName>
 				            <replicas>1</replicas>

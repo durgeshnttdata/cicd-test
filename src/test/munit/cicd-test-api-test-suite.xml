@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="cicd-test-api-test-suite.xml" />
+	<munit:test name="cicd-test-api-test-suite-cicd-test-apiFlowTest" doc:id="fa8b0298-71bf-4a76-9d03-e2704324e23e" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to cicd-test-apiFlow" doc:id="36c02605-8e79-4fbb-854d-043006dfc258" name="cicd-test-apiFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Assert that" doc:id="ba696d34-c1be-4b4f-9aeb-748aed05198f" is="#[MunitTools::equalTo(payload)]" expression='#[{&#10;	message: "success check"&#10;}]'/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>

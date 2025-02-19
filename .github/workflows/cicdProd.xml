@@ -1,7 +1,7 @@
 on:
   push:
     tags: 
-      - v1.*
+      - v1.prod.*
 jobs: 
     cicd:
         uses: durgeshnttdata/workflow-template/.github/workflows/workflowProd.yml@main

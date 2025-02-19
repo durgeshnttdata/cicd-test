@@ -1,6 +1,6 @@
 on:
   push:
-    branches: [ dev1 ]
+    branches: [ main ]
 
 jobs: 
     cicd:

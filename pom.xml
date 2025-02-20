@@ -46,11 +46,13 @@
 						<vCores>0.1</vCores>
 						<properties>
 							<mule.env>${env}</mule.env>
+							<datadog.env>${datadog.env}</datadog.env>
 						</properties>
 						<secureProperties>  		
 							<anypoint.platform.client_id>${anypoint.platform.client_id}</anypoint.platform.client_id>           
 							<anypoint.platform.client_secret>${anypoint.platform.client_secret}</anypoint.platform.client_secret>
-							<mule.key>${secure_key}</mule.key>
+							<mule.key>${secure_key}</mule.key
+							<ddapikey>${ddapikey}</ddapikey>
 						</secureProperties>
 						<deploymentSettings>
 							<generateDefaultPublicUrl>true</generateDefaultPublicUrl>

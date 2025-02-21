@@ -6,6 +6,7 @@ jobs:
     cicd:
         uses: durgeshnttdata/workflow-template/.github/workflows/workflow.yml@main
         with:
+            token: ${{ secrets.GH_PAT }}
             appName: cicd-test
             
         secrets: inherit 

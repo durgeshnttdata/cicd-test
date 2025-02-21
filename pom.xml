@@ -40,7 +40,6 @@
 						<provider>MC</provider>
 						<environment>${cloudhub.environment}</environment>
 						<target>${cloudhub.target}</target>
-						<muleVersion>4.9.1:2</muleVersion>
 						<releaseChannel>LTS</releaseChannel>
 						<javaVersion>17</javaVersion>
 						<server>Repository</server>

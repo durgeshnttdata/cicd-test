@@ -4,7 +4,7 @@ on:
       - v[0-9].*.*.alpha*
 jobs: 
     cicd:
-        uses: durgeshnttdata/workflow-template/.github/workflows/workflowQA.yml@main
+        uses: durgeshnttdata/workflow-template/.github/workflows/workflowProd.yml@main
         with:
             appName: cicd-test
             

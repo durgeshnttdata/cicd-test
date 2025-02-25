@@ -1,7 +1,7 @@
 on:
   push:
     tags: 
-      - v[0-9].*.*.alpha*
+      - '*.alpha*'
 jobs: 
     cicd:
         uses: durgeshnttdata/workflow-template/.github/workflows/workflowProd.yml@main

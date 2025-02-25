@@ -1,0 +1,11 @@
+on:
+  push:
+    tags: 
+      - v[0-9].*.*.alpha*
+jobs: 
+    cicd:
+        uses: durgeshnttdata/workflow-template/.github/workflows/workflowStage.yml@main
+        with:
+            appName: cicd-test
+            
+        secrets: inherit 

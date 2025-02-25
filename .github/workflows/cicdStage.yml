@@ -1,7 +1,7 @@
 on:
   push:
     tags: 
-      - v[0-9].*.*.alpha*
+      - v[0-9].*.*.stage*
 jobs: 
     cicd:
         uses: durgeshnttdata/workflow-template/.github/workflows/workflowStage.yml@main
